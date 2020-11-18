@@ -42,6 +42,7 @@ function createRequestInterceptor(Tracer: ITracer, rootSpan: ISpan) {
          childOf: rootSpan
        });
 
+       span.setTag(Tags.COMPONENT, 'axios');
        span.setTag(Tags.HTTP_METHOD, config.method);
        span.setTag(Tags.HTTP_URL, fullURL);
        span.setTag(Tags.SPAN_KIND, Tags.SPAN_KIND_RPC_CLIENT);
